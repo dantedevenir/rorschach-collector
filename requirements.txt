@@ -1,0 +1,7 @@
+kafka-python==2.0.2 ; python_version >= "3.12" and python_version < "4.0"
+numpy==2.1.1 ; python_version >= "3.12" and python_version < "4.0"
+py4j==0.10.9.7 ; python_version >= "3.12" and python_version < "4.0"
+pyarrow==17.0.0 ; python_version >= "3.12" and python_version < "4.0"
+pyspark==3.5.2 ; python_version >= "3.12" and python_version < "4.0"
+six==1.16.0 ; python_version >= "3.12" and python_version < "4.0"
+watchdog==5.0.2 ; python_version >= "3.12" and python_version < "4.0"
