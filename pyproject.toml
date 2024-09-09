@@ -1,12 +1,9 @@
 [tool.poetry]
-name = "rorschach-collector"
-version = "0.1.0"
+name = "rorschach_collector"
+version = "0.1.4"
 description = ""
 authors = ["Dante Devenir <dantedevenir@outlook.com>"]
 readme = "README.md"
-packages = [
-        {include = "watchman", from = "rorschach-collector/components"},
-]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -14,10 +11,6 @@ watchdog = "5.0.2"
 pyspark = "3.5.2"
 pyarrow = "17.0.0"
 kafka-python = "2.0.2"
-kafka-python-ng = "2.0.2"
-
-[tool.poetry.scripts]
-rorschach-collector = "watchman:watcher"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
@@ -28,10 +21,6 @@ types-toml = "^0.10.8"
 pandas_stubs = "^2.2.2"
 types_requests = "^2.32.0"
 pylint = "^3.2.6"
-
-[[tool.mypy.overrides]]
-module = "toml.*"
-ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core"]

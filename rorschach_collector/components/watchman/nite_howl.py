@@ -1,7 +1,11 @@
+import sys
 from io import BytesIO
 import pyarrow.csv as csv
 import pyarrow.parquet as pq
+import six
+sys.modules['kafka.vendor.six.moves'] = six.moves
 from kafka import KafkaProducer
+
 
 class NiteHowl:
     
