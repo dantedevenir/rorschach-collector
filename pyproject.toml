@@ -1,17 +1,19 @@
 [tool.poetry]
 name = "rorschach_collector"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["Dante Devenir <dantedevenir@outlook.com>"]
 readme = "README.md"
+packages = [
+        {include = "components", from = "rorschach_collector"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 watchdog = "5.0.2"
 pyspark = "3.5.2"
 pyarrow = "17.0.0"
-kafka-python = "2.0.2"
-six = "^1.16.0"
+confluent-kafka = "^2.5.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"

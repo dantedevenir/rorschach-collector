@@ -8,7 +8,7 @@
             "name": "Rocky Debugger: Module",
             "type": "debugpy",
             "request": "launch",
-            "module": "watchman"
+            "module": "rorschach_collector"
         },
         {
             "name": "Python C++ Debugger",

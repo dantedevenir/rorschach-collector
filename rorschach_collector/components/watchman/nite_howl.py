@@ -1,10 +1,7 @@
-import sys
 from io import BytesIO
 import pyarrow.csv as csv
 import pyarrow.parquet as pq
-import six
-sys.modules['kafka.vendor.six.moves'] = six.moves
-from kafka import KafkaProducer
+from confluent_kafka import Producer, Consumer
 
 
 class NiteHowl:
@@ -12,7 +9,13 @@ class NiteHowl:
     def __init__(self, broker, topic) -> None:
         self.broker = broker
         self.topic = topic
-        self.producer = KafkaProducer(bootstrap_servers=broker)
+        self.producer = Producer({'bootstrap.servers': broker})
+        self.consumer = Consumer({
+            'bootstrap.servers': broker,
+            'group.id': 'mygroup',
+            'enable.auto.commit': True,
+            'auto.offset.reset': 'earliest'
+        })
     
     def package(self, dataframe) -> BytesIO:
         parquet_buffer = BytesIO()
@@ -25,6 +28,6 @@ class NiteHowl:
     def send(self, path):
         dataframe = csv.read_csv(path)
         parquet_buffer = self.package(dataframe)
-        self.producer.send(self.topic, value=parquet_buffer.getvalue())
+        self.producer.produce(self.topic, parquet_buffer.getvalue())
         self.producer.flush()
         
