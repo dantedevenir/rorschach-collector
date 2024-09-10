@@ -1,7 +1,7 @@
 from os import getenv, stat, path, rename
 from watchdog.events import FileSystemEventHandler
 from datetime import datetime
-from .nite_howl import NiteHowl
+from nite_howl import NiteHowl
 from .minute import minute, instropetion
 
 

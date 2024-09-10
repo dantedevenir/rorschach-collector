@@ -11,9 +11,13 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.12"
 watchdog = "5.0.2"
-pyspark = "3.5.2"
-pyarrow = "17.0.0"
-confluent-kafka = "^2.5.3"
+nite_howl = "0.1.1"
+
+[[tool.poetry.source]]
+name = "nite-howl"
+url = "https://pkgs.dev.azure.com/dantedevenir/rorschach/_packaging/nite-howl/pypi/simple"
+priority = "supplemental"
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
