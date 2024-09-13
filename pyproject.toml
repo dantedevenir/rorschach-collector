@@ -11,7 +11,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.12"
 watchdog = "5.0.2"
-nite_howl = "0.1.1"
+nite_howl = "0.1.10"
 
 [[tool.poetry.source]]
 name = "nite-howl"
