@@ -8,7 +8,8 @@
             "name": "Rocky Debugger: Module",
             "type": "debugpy",
             "request": "launch",
-            "module": "rorschach_collector"
+            "module": "rorschach_collector",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "name": "Python C++ Debugger",

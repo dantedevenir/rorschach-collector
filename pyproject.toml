@@ -6,12 +6,15 @@ authors = ["Dante Devenir <dantedevenir@outlook.com>"]
 readme = "README.md"
 packages = [
         {include = "components", from = "rorschach_collector"},
+        {include = "utils", from = "rorschach_collector"},
 ]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 watchdog = "5.0.2"
-nite_howl = "0.1.10"
+toml = "^0.10.2"
+pandas = "^2.2.2"
+nite_howl = "0.1.29"
 
 [[tool.poetry.source]]
 name = "nite-howl"
